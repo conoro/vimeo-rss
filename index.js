@@ -2,14 +2,27 @@
 // LICENSE Apache-2.0
 // Invoke like https://url.of.serverless.function/dev/rss?page=https://vimeo.com/camp4collective
 
+/*
 module.exports.check = (event, context, callback) => {
+*/
 
-    const chromium = require('chrome-aws-lambda');
-    let browser = null;
-
+async function getVimeoVideos() {
+    var config = require('./config');
     const axios = require('axios');
-    var cheerio = require("cheerio");
 
+    try {
+        const response = await axios.get("https://api.vimeo.com/users/48632997/videos", { headers: {"Authorization" : `bearer ${config.vimeoToken}`} });
+        console.dir(response);
+    } catch (error) {
+        // handle error
+        console.log("Error 1: ", error);
+    }
+
+}
+
+getVimeoVideos();
+
+/*
     var RSS = require("rss");
     var sectionURL = event.query.page;
     // var sectionURL = "https://vimeo.com/camp4collective/videos";
@@ -76,3 +89,5 @@ module.exports.check = (event, context, callback) => {
         }
     }
 };
+
+*/
