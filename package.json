@@ -1,0 +1,22 @@
+{
+  "name": "vimeo-rss",
+  "version": "1.0.0",
+  "description": "Generate an RSS feed for Vimeo channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vimeo",
+    "rss"
+  ],
+  "author": "Conor O'Neill",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "cheerio": "^1.0.0-rc.3",
+    "chrome-aws-lambda": "^5.3.1",
+    "puppeteer-core": "^5.3.1",
+    "rss": "^1.2.2"
+  }
+}

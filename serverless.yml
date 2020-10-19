@@ -1,0 +1,22 @@
+service: serverless-rss
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  timeout: 25
+
+functions:
+  check:
+    handler: index.check
+    events:
+      - http:
+          path: rss
+          method: get
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'text/xml'"
+            template: $input.path('$')
