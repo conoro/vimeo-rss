@@ -4,6 +4,7 @@ conf.toml
 project.conf
 sample_api_output.json
 config.js
+test.js
 
 ### Linux ###
 *~
